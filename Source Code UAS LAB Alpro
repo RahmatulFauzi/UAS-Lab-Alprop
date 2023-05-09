@@ -79,3 +79,24 @@ void pinjam_buku() {
     }
 }
 
+void kembalikan_buku() {
+    char judul[100];
+        printf("Judul buku yang akan dikembalikan: ");
+        scanf(" %[^\n]s", judul);
+    int ditemukan = 0;
+    for (int i = 0; i < jumlah_buku; i++) {
+        if (strcmp(kumpulan_buku[i].judul, judul) == 0) {
+        if (kumpulan_buku[i].dipinjam) {
+             kumpulan_buku[i].dipinjam = 0;
+             printf("Buku berhasil dikembalikan.\n");
+        } else {
+            printf("Maaf, buku belum dipinjam.\n");
+               }
+      ditemukan = 1;
+    break;
+      }
+    }
+    if (!ditemukan) {
+          printf("Tidak ditemukan buku dengan judul %s.\n", judul);
+        }
+    }
