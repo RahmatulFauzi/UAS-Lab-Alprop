@@ -14,3 +14,25 @@ struct Buku {
 
 struct Buku kumpulan_buku[MAX_BUKU];
 int jumlah_buku = 0;
+
+void tambah_buku() {
+    if (jumlah_buku < MAX_BUKU) {
+        struct Buku buku;
+        printf("Judul: ");
+        scanf(" %[^\n]s", buku.judul);
+        printf("Pengarang: ");
+        scanf(" %[^\n]s", buku.pengarang);
+        printf("Penerbit: ");
+        scanf(" %[^\n]s", buku.penerbit);
+        printf("Tahun terbit: ");
+        scanf("%d", &buku.tahun_terbit);
+        printf("Jumlah halaman: ");
+        scanf("%d", &buku.jumlah_halaman);
+        buku.dipinjam = 0;
+        kumpulan_buku[jumlah_buku] = buku;
+        jumlah_buku++;
+        printf("Buku berhasil ditambahkan.\n");
+    } else {
+        printf("Maaf, jumlah buku sudah mencapai batas maksimum.\n");
+    }
+}
