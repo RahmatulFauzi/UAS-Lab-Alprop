@@ -56,3 +56,26 @@ void cari_buku() {
         printf("Tidak ditemukan buku dengan judul %s.\n", judul);
     }
 }
+
+void pinjam_buku() {
+    char judul[100];
+    printf("Judul buku yang akan dipinjam: ");
+    scanf(" %[^\n]s", judul);
+    int ditemukan = 0;
+    for (int i = 0; i < jumlah_buku; i++) {
+        if (strcmp(kumpulan_buku[i].judul, judul) == 0) {
+            if (kumpulan_buku[i].dipinjam) {
+                printf("Maaf, buku sedang dipinjam.\n");
+            } else {
+                kumpulan_buku[i].dipinjam = 1;
+                printf("Buku berhasil dipinjam.\n");
+            }
+            ditemukan = 1;
+            break;
+        }
+    }
+    if (!ditemukan) {
+        printf("Tidak ditemukan buku dengan judul %s.\n", judul);
+    }
+}
+
