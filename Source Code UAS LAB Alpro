@@ -95,8 +95,44 @@ void kembalikan_buku() {
       ditemukan = 1;
     break;
       }
+      
     }
     if (!ditemukan) {
           printf("Tidak ditemukan buku dengan judul %s.\n", judul);
         }
     }
+
+    int main() {    
+        int pilihan;
+        do {
+            printf("Menu:\n");
+            printf("1. Tambah buku\n");
+            printf("2. Cari buku\n");
+            printf("3. Pinjam buku\n");
+            printf("4. Kembalikan buku\n");
+            printf("5. Keluar\n");
+            printf("Pilihan: ");
+            scanf("%d", &pilihan);
+        switch (pilihan) {
+        case 1:
+            tambah_buku();
+        break;
+        case 2:
+            cari_buku();
+        break;
+        case 3:
+            pinjam_buku();
+        break;
+        case 4:
+            kembalikan_buku();
+        break;
+        case 5:
+            printf("Terima kasih.\n");
+        break;
+        default:
+            printf("Pilihan tidak valid.\n");
+        break;
+         }
+    } while (pilihan != 5);
+    return 0;
+  }
