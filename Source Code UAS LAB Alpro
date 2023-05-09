@@ -36,3 +36,23 @@ void tambah_buku() {
         printf("Maaf, jumlah buku sudah mencapai batas maksimum.\n");
     }
 }
+
+void cari_buku() {
+    char judul[100];
+    printf("Cari buku: ");
+    scanf(" %[^\n]s", judul);
+    int ditemukan = 0;
+    for (int i = 0; i < jumlah_buku; i++) {
+        if (strcmp(kumpulan_buku[i].judul, judul) == 0) {
+            printf("Judul buku: %s\n", kumpulan_buku[i].judul);
+            printf("Pengarang: %s\n", kumpulan_buku[i].pengarang);
+            printf("Tahun terbit: %d\n", kumpulan_buku[i].tahun_terbit);
+            printf("Penerbit: %s\n", kumpulan_buku[i].penerbit);
+            ditemukan = 1;
+            break;
+        }
+    }
+    if (!ditemukan) {
+        printf("Tidak ditemukan buku dengan judul %s.\n", judul);
+    }
+}
