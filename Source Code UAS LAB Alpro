@@ -1,1 +1,16 @@
+#include <stdio.h>
+#include <string.h>
 
+#define MAX_BUKU 50
+
+struct Buku {
+    char judul[100];
+    char pengarang[100];
+    char penerbit[100];
+    int tahun_terbit;
+    int jumlah_halaman;
+    int dipinjam;
+};
+
+struct Buku kumpulan_buku[MAX_BUKU];
+int jumlah_buku = 0;
