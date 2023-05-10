@@ -75,7 +75,7 @@ void pinjam_buku() {
         }
     }
     if (!ditemukan) {
-        printf("Tidak ditemukan buku dengan judul %s.\n", judul);
+        printf("Tidak tersedia buku dengan judul %s.\n", judul);
     }
 }
 
@@ -98,7 +98,7 @@ void kembalikan_buku() {
       
     }
     if (!ditemukan) {
-          printf("Tidak ditemukan buku dengan judul %s.\n", judul);
+          printf("Tidak ditemukan pinjaman buku dengan judul %s.\n", judul);
         }
     }
 
